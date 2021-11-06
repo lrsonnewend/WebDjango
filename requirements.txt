@@ -1,0 +1,7 @@
+Django
+django-braces
+django-cleanup
+django-crispy-forms
+pytz
+six
+sqlparse
