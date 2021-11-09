@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 
 #página inicial 
 class IndexView(TemplateView):
-    template_name = "modelo.html"
+    template_name = "paginas/modelo.html"
 
 class SobreView(TemplateView):
-    template_name = "sobre.html"
+    template_name = "paginas/sobre.html"

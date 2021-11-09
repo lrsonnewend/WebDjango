@@ -20,18 +20,26 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active mr-2">
-                        <a class="nav-link" href="{% url 'inicio' %}"><i class="bi bi-house-door-fill"></i> Início</a>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link text-white" href="{% url 'inicio' %}"><i class="bi bi-house-door-fill"></i>
+                            Início</a>
                     </li>
-                    <li class="nav-item active mr-2">
-                        <a class="nav-link" href="{% url 'cadastrar-campo' %}"><i class="bi bi-plus-square-fill"></i> Cadastros</a>
+                    <li class="nav-item dropdown mr-2">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-plus-square-fill"></i>
+                            Cadastros
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'cadastrar-campo' %}">Campo</a>
+
+                            <a class="dropdown-item" href="{% url 'cadastrar-atividade' %}">Atividade</a>
+                        </div>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'sobre' %}"><i class="bi bi-info-circle-fill"></i> Sobre</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'sobre' %}"><i class="bi bi-info-circle-fill"></i>
+                            Sobre</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -52,7 +60,7 @@
 
     {% block rodape %}
     <!-- Footer -->
-    <footer class="fixed-bottom text-center text-white" style="background-color: olivedrab;">
+    <footer class="text-center text-white" style="background-color: olivedrab;">
         <!-- Grid container -->
         <div class="container">
             <section class="">
@@ -158,8 +166,14 @@
     <!-- Footer -->
     {% endblock %}
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>
 

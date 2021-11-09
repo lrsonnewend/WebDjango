@@ -9,10 +9,10 @@ class Campo(models.Model):
         return f'{self.nome} ({self.descricao})'
 
 class Atividade(models.Model):
-    numero = models.IntegerField(verbose_name="Número")
+    numero = models.IntegerField(verbose_name="Número", unique=True)
     descricao = models.CharField(max_length=150, verbose_name="Descrição")
     pontos = models.DecimalField(max_digits=5, decimal_places=2)
-    detalhes = models.CharField(max_length=100)
+    detalhes = models.CharField(max_length=100, null=True, blank=True)
     campo = models.ForeignKey(Campo, on_delete=models.PROTECT)
 
     def __str__(self):
