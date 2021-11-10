@@ -28,13 +28,13 @@
                     <li class="nav-item dropdown mr-2">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bi bi-plus-square-fill"></i>
-                            Cadastros
+                            <i class="bi bi-list-ul"></i>
+                            Consultar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'cadastrar-campo' %}">Campo</a>
+                            <a class="dropdown-item" href="{% url 'listar-campos' %}">Campos</a>
 
-                            <a class="dropdown-item" href="{% url 'cadastrar-atividade' %}">Atividade</a>
+                            <a class="dropdown-item" href="{% url 'listar-atividades' %}">Atividades</a>
                         </div>
                     </li>
                     {% endif %}
