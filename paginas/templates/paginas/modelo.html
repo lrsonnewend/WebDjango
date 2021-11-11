@@ -60,6 +60,12 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'registrar-usuario' %}">
+                            <i class="bi bi-person-plus-fill"></i>
+                            Registrar
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'login' %}">
                             <i class="bi bi-box-arrow-in-right"></i>
                             Login
