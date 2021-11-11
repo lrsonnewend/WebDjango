@@ -14,6 +14,14 @@ class CampoCreate(GroupRequiredMixin,LoginRequiredMixin, CreateView):
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-campos')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Cadastro de Campo'
+        context['botao'] = 'Registrar'
+        return context
+
+
 class AtividadeCreate(GroupRequiredMixin,LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     group_required = u'Administrador'
@@ -21,6 +29,13 @@ class AtividadeCreate(GroupRequiredMixin,LoginRequiredMixin, CreateView):
     fields = ['numero', 'descricao', 'pontos', 'detalhes', 'campo']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-atividades')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Cadastro de Atividade'
+        context['botao'] = 'Registrar'
+        return context
 
 #UPDATE
 class CampoUpdate(GroupRequiredMixin,LoginRequiredMixin, UpdateView):
@@ -31,6 +46,13 @@ class CampoUpdate(GroupRequiredMixin,LoginRequiredMixin, UpdateView):
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('listar-campos')
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Alterar Campo'
+        context['botao'] = 'Salvar'
+        return context
+
 class AtividadeUpdate(GroupRequiredMixin,LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     group_required = u'Administrador'
@@ -38,6 +60,13 @@ class AtividadeUpdate(GroupRequiredMixin,LoginRequiredMixin, UpdateView):
     fields = ['numero', 'descricao', 'pontos', 'detalhes', 'campo']
     template_name = 'cadastros/form.html'
     success_url = reverse_lazy('index')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Alterar Atividade'
+        context['botao'] = 'Salvar'
+        return context
 
 
 #DELETE
