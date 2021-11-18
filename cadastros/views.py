@@ -90,6 +90,18 @@ class CampoList(LoginRequiredMixin, ListView):
     login_url = reverse_lazy('login')
     model = Campo
     template_name = 'cadastros/listas/campo.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        txt_nome = self.request.GET.get('nome')
+
+        if txt_nome:
+            campos = Campo.objects.filter(nome__icontains=txt_nome)
+        
+        else:
+            campos = Campo.objects.all()
+
+        return campos
     
 
 
@@ -97,3 +109,4 @@ class AtividadeList(LoginRequiredMixin, ListView):
     login_url = reverse_lazy('login')
     model = Atividade
     template_name = 'cadastros/listas/atividade.html'
+    paginate_by = 10

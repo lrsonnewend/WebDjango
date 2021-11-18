@@ -39,6 +39,15 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <div class="text-center">
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Anterior</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">Seguinte</a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
 
